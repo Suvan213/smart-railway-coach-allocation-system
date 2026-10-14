@@ -1,0 +1,94 @@
+# Week 2 Report: Database Implementation and CRUD Operations
+
+## 1. Introduction
+
+Week 2 focuses on implementing the database design prepared in Week 1 and developing the Python models required to interact with the database.
+
+The objective is to organize train, coach, requirement, and allocation information using MySQL and Python database models.
+
+## 2. Objectives
+
+- Implement the database schema in MySQL.
+- Create Python models for the main entities.
+- Establish relationships between the models.
+- Implement CRUD operations for train, coach, and requirement records.
+- Prepare the database layer for the management functionality planned for Week 3.
+
+## 3. Database Implementation
+
+The database contains four main entities:
+
+- **Trains:** Stores train numbers, names, and route details.
+- **Coaches:** Stores coach numbers, types, current stations, and status.
+- **Requirements:** Stores the coach type and quantity required by a train.
+- **Allocations:** Stores train-coach allocation records.
+
+Primary keys and foreign keys help maintain relationships between the tables.
+
+## 4. Python Models
+
+The application uses Python model classes to represent database entities.
+
+The planned models include:
+
+- `Train`
+- `Coach`
+- `Requirement`
+- `Allocation`
+
+SQLAlchemy can be used to map these classes to their corresponding MySQL tables and manage database queries.
+
+## 5. CRUD Operations
+
+CRUD stands for Create, Read, Update, and Delete.
+
+### Create
+
+Adds a new train, coach, or requirement record.
+
+### Read
+
+Retrieves and displays existing records.
+
+### Update
+
+Changes existing information, such as train details or coach status.
+
+### Delete
+
+Removes a record where deletion is permitted and database relationships allow it.
+
+## 6. Database Relationships
+
+The `Requirements` table references the `Trains` table through `train_id`.
+
+The `Allocations` table references both `Trains` and `Coaches` through their respective identifiers.
+
+These relationships connect related information and help maintain data integrity.
+
+## 7. Expected Deliverables
+
+- MySQL database and required tables.
+- Python model definitions.
+- Database relationships.
+- CRUD operations for required records.
+- Database layer prepared for management operations.
+
+## 8. Evidence and Screenshots
+
+Add screenshots of the work actually completed:
+
+- Screenshot 1: Database tables in MySQL Workbench.
+- Screenshot 2: Python model definitions.
+- Screenshot 3: CRUD operations.
+- Screenshot 4: Sample records or query results.
+
+## 9. Challenges and Observations
+
+Database connectivity, correct table names, field types, and foreign-key relationships must be checked carefully. The application configuration must also match the local MySQL setup.
+
+## 10. Conclusion
+
+Week 2 focuses on the database implementation and data-access layer. These components provide the foundation for train and coach management in Week 3.
+
+**Progress note:** Update this report with the actual implementation status, screenshots, and test results. Do not mark operations as completed unless they have been implemented and verified.
