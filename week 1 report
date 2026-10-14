@@ -103,20 +103,14 @@ The planned development environment includes:
 - Primary-key and foreign-key relationship plan.
 - Preparation for database implementation in Week 2.
 
-## 8. Evidence and Screenshots
 
-Add screenshots here as the work is completed:
 
-- Screenshot 1: Project folder structure.
-- Screenshot 2: Database schema or table design.
-- Screenshot 3: MySQL database creation, if completed.
-
-## 9. Challenges and Observations
+## 8. Challenges and Observations
 
 The database design must keep train information, coach information, requirements, and allocation records organized separately. Relationships between these entities need to be defined carefully to avoid inconsistent records.
 
-## 10. Conclusion
+## 9. Conclusion
 
 Week 1 establishes the foundation for the Smart Railway Coach Allocation and Management System. The identified entities and proposed database relationships will guide the database implementation and Python model development in Week 2.
 
-**Progress note:** Update this report to reflect the activities actually completed. Add evidence and distinguish planned work from implemented work.
+
