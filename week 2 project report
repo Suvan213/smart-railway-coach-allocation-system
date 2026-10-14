@@ -54,6 +54,10 @@ Retrieves and displays existing records.
 
 Changes existing information, such as train details or coach status.
 
+### Delete
+
+Removes a record where deletion is permitted and database relationships allow it.
+
 
 ## 6. Database Relationships
 
