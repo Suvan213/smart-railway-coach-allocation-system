@@ -227,10 +227,10 @@ The project documentation is maintained in separate Markdown files.
 
 | Week | Main Focus | Report |
 
-| Week 1 | Environment setup and database schema design | [Week 1 Report](reports/week-1-report.md) |
-| Week 2 | Database implementation, Python models, and CRUD operations | [Week 2 Report](reports/week-2-report.md) |
-| Week 3 | Train and coach management, status updates, and API endpoints | [Week 3 Report](reports/week-3-report.md) |
-| Week 4 | Rule-based coach filtering and validation | [Week 4 Report](reports/week-4-report.md) |
+| Week 1 | Environment setup and database schema design | [week 1 report](reports/week-1-report.md) |
+| Week 2 | Database implementation, Python models, and CRUD operations | [week 2 project report](reports/week-2-project-report.md) |
+| Week 3 | Train and coach management, status updates, and API endpoints | [week 3 project report](reports/week-3-project-report.md) |
+| Week 4 | Rule-based coach filtering and validation | [week 4 project report](reports/week-4-project-report.md) |
 
 Each report should document the objective, activities performed, implementation details, evidence, test results, and outcome of the corresponding week.
 
