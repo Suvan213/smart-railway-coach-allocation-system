@@ -54,9 +54,6 @@ Retrieves and displays existing records.
 
 Changes existing information, such as train details or coach status.
 
-### Delete
-
-Removes a record where deletion is permitted and database relationships allow it.
 
 ## 6. Database Relationships
 
@@ -74,21 +71,14 @@ These relationships connect related information and help maintain data integrity
 - CRUD operations for required records.
 - Database layer prepared for management operations.
 
-## 8. Evidence and Screenshots
 
-Add screenshots of the work actually completed:
 
-- Screenshot 1: Database tables in MySQL Workbench.
-- Screenshot 2: Python model definitions.
-- Screenshot 3: CRUD operations.
-- Screenshot 4: Sample records or query results.
-
-## 9. Challenges and Observations
+## 8. Challenges and Observations
 
 Database connectivity, correct table names, field types, and foreign-key relationships must be checked carefully. The application configuration must also match the local MySQL setup.
 
-## 10. Conclusion
+## 9. Conclusion
 
 Week 2 focuses on the database implementation and data-access layer. These components provide the foundation for train and coach management in Week 3.
 
-**Progress note:** Update this report with the actual implementation status, screenshots, and test results. Do not mark operations as completed unless they have been implemented and verified.
+
