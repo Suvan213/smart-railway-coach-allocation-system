@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Allocation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <h1>Coach Allocation</h1>
+            <p>Constraint-based railway coach allocation</p>
+        </div>
+        <a href="/" class="nav-link">Dashboard</a>
+    </header>
+
+    <main class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <p class="notice {{ category }}">{{ message }}</p>
+            {% endfor %}
+        {% endwith %}
+
+        <section class="welcome">
+            <h2>Allocate Coaches to Train</h2>
+            <p>Only matching, available coaches at the train's source station are considered. If any requirement cannot be fulfilled, the allocation is cancelled.</p>
+
+            {% if trains %}
+            <form method="POST" class="train-form">
+                <label>Select Train</label>
+                <select name="train_id" required>
+                    {% for train in trains %}
+                    <option value="{{ train.id }}">
+                        {{ train.train_number }} — {{ train.train_name }}
+                        ({{ train.source_station }})
+                    </option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Find and Allocate Coaches</button>
+            </form>
+            {% else %}
+            <p>Please add a train first.</p>
+            {% endif %}
+        </section>
+
+        <section class="welcome">
+            <h2>Allocation History</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Train</th>
+                            <th>Coach Number</th>
+                            <th>Coach Type</th>
+                            <th>Status</th>
+                            <th>Allocated At</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in allocations %}
+                        <tr>
+                            <td>{{ item.train_number }} - {{ item.train_name }}</td>
+                            <td>{{ item.coach_number }}</td>
+                            <td>{{ item.coach_type }}</td>
+                            <td>{{ item.allocation_status }}</td>
+                            <td>{{ item.allocated_at }}</td>
+                            <td>
+    {% if item.allocation_status == 'Active' %}
+    <form method="POST" action="{{ url_for('release_allocation', allocation_id=item.id) }}">
+        <button type="submit"
+                onclick="return confirm('Release this coach allocation?')">
+            Release
+        </button>
+    </form>
+    {% else %}
+    —
+    {% endif %}
+</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="6">No allocations yet.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
